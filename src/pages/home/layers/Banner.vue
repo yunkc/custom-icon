@@ -6,14 +6,14 @@
         <h1>Simple use of custom icons in your project.</h1>
         <p>
             Open-source project and some refined icons.<br/>
-            We need to simple use icons, while keeping it nice-looking, so make this -  <a href="https://github.com/vf-yunkc" target="_black">join us!</a>
+            We need to simple use icons, while keeping it nice-looking, so make this -  <a href="https://github.com/yunkc" target="_black">join us!</a>
         </p>
         <div class="flex" >
             <a class="btn" href="#" mark="批量微调工具待开发..">
                 <icon name="custom" size="24"/>
                 <span>Finetune</span>
             </a>
-            <a class="btn" href="https://github.com/vipkid-edu" target="_black">
+            <a class="btn" href="https://github.com/yunkc/custom-icon" target="_black">
                 <icon name="github" size="24"/>
                 <span>Github</span>
             </a>
