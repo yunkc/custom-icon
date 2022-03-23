@@ -27,6 +27,7 @@ svg {
 }
 </style>
 <script setup lang="ts">
+import { icons } from '@/plugins/icon';
 import {
     ref,
     computed,
@@ -62,4 +63,7 @@ const style: any = computed(() => {
         color: props.color || '',
     };
 });
+onMounted(() => {
+    if(icons.indexOf(props.name) === -1) console.warn(props.name + '.svg not found!!')
+})
 </script>
