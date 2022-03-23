@@ -1,0 +1,150 @@
+.light-theme() {
+    --color-background: #f6f8fa;
+    --color-background-light: #fff;
+    --color-background-dark: #eee;
+    --color-page-header-background: rgb(255,255,255);
+    --color-active: rgb(99 179 237);
+    --color-text: #333;
+    --color-text-dark: #000;
+    --color-text-light: #666;
+    --color-text-link: 102 102 102;
+    --color-border: rgba(0, 0, 0, 0.16);
+    --color-border-hover: rgba(0, 0, 0, .24);
+    --color-border-active: rgba(0, 0, 0, .32);
+    --color-border-disable: rgba(0, 0, 0, .05);
+    --color-button-background:rgba(0, 0, 0, 0.04);
+    --color-button-background-hover: rgba(0, 0, 0, 0.03);
+    --color-button-background-active: rgba(0, 0, 0, 0.08);;
+    --color-input-background: rgba(255,255,255,.5);
+    --color-input-background-hover: rgba(255,255,255,.8);
+}
+.dark-theme() {
+    --color-background: #222;
+    --color-background-light: #333;
+    --color-background-dark: #111;
+    --color-page-header-background: rgb(16,16,16);
+    --color-active: rgb(99 179 237);
+    --color-text: #eee;
+    --color-text-dark: #fff;
+    --color-text-light: #ccc;
+    --color-text-link: 153 153 153;
+    --color-border: rgba(255, 255, 255, 0.16);
+    --color-border-hover: rgba(255, 255, 255, .24);
+    --color-border-active: rgba(255, 255, 255, .32);
+    --color-border-disable: rgba(255, 255, 255, .05);
+    --color-button-background:rgba(0, 0, 0, .4);
+    --color-button-background-hover: rgba(0, 0, 0, .5);
+    --color-button-background-active: rgba(0, 0, 0, .8);;
+    --color-input-background: rgba(0,0,0,.05);
+    --color-input-background-hover: rgba(0,0,0,.01);
+}
+
+:root {
+    --font-base: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+        Arial, sans-serif;
+    --page-header-height: 4rem;
+    --page-padding: 1.5rem;
+    --color-tab-active-text: var(--color-text);
+    --border-radius: 0.5rem;
+    --filter-disabled: grayscale(95%) opacity(40%);
+}
+@media (max-width: 32em) {
+    :root {
+        --page-padding: 1em;
+    }
+}
+
+html {
+    font-family: var(--font-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+*,
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    .light-theme;
+    @media (prefers-color-scheme: dark) {
+        .dark-theme;
+    }
+    background: var(--color-background);
+    color: var(--color-text);
+    overflow-x: hidden;
+    position: relative;
+    transition: background 0.15s;
+}
+
+body[data-theme='light'] {
+    .light-theme;
+}
+
+body[data-theme='dark'] {
+    .dark-theme;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    border: none;
+    background: none;
+}
+
+a,
+button,
+textarea {
+    color: inherit;
+}
+
+h1,
+h2,
+h3 {
+    color: #383a3f;
+    color: var(--color-text-dark);
+    margin: 1rem 0;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+a,
+a > * {
+    --underline-opacity: 0.3;
+    color: var(--color-text-link);
+    text-decoration-color: rgb(
+        var(--color-text-link) / var(--underline-opacity)
+    );
+    transition: text-decoration-color 0.15s;
+}
+
+a:hover,
+a > :hover {
+    --underline-opacity: 0.7;
+}
+
+ul {
+    list-style-type: none;
+}
