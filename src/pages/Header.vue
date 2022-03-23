@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, inject, watch, reactive, computed, defineComponent} from 'vue';
+import Logo from './logo/index.vue'
 
 const scroll = inject('scroll');
 const bh = inject('bh');
@@ -40,7 +41,7 @@ const setTheme = (evt: Event) => {
 <template>
     <header>
         <a href="https://www.yunkc.cn/" aria-label="logo">
-            <img src="../assets/logo.svg" alt="yunkc.cn" />
+            <logo/>
             <h3 ref="sign">云课程</h3>
         </a>
         <input
@@ -99,7 +100,7 @@ header {
         align-items: center;
         display: flex;
     }
-    &::before {
+    &:before {
         content: '';
         position: absolute;
         left: 0;
@@ -113,7 +114,7 @@ header {
     a[aria-label='logo'] {
         text-decoration: none;
         letter-spacing: 0.5em;
-        img {
+        img,svg {
             margin-right: 1rem;
         }
     }

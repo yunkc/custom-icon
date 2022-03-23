@@ -4,6 +4,8 @@
         :class="{ loading: props.name == 'loading' }"
         :width="size"
         :height="size"
+        :style="{ color: color }"
+        v-bind="$attrs"
     ></component>
 </template>
 <style scoped lang="less">
@@ -46,23 +48,14 @@ const props = withDefaults(
     }>(),
     {
         size: '1em',
+        color: ''
     }
 );
-const iconSize = computed(() => {
-    return typeof props.size === 'number' ? props.size + 'px' : props.size;
-});
-// 图标名称
+
 const iconName: any = computed(() => {
     return 'icon-' + props.name;
 });
-// 图标样式
-const style: any = computed(() => {
-    return {
-        fontSize: iconSize.value,
-        '--fill-color': props.color || '',
-        color: props.color || '',
-    };
-});
+
 onMounted(() => {
     if(icons.indexOf(props.name) === -1) console.warn(props.name + '.svg not found!!')
 })

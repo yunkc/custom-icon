@@ -26,7 +26,7 @@ const onInput = (evt:Event)=>{
 
 <template>
     <div class="search" :data-style="style">
-        <icon class="icon-search" name="search" size="20" />
+        <icon class="icon-search" name="search" size="20" color="#999" />
         <input ref="search" type="search" :placeholder="placeholder" value="" @input="onInput"/>
     </div>
 </template>

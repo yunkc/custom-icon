@@ -25,10 +25,10 @@ export default {
             bh: 300
         }
     },
-    provide() {
+    provide():any {
         return {
-            scroll: computed(() => this.scroll),
-            bh: computed(() => this.bh),
+            scroll: computed(() => (this as any).scroll),
+            bh: computed(() => (this as any).bh),
         }
     },
     mounted() {
@@ -36,12 +36,12 @@ export default {
             document.documentElement.scrollHeight - window.innerHeight;
         const se: HTMLElement = document.body;
         let tk: number = 0;
-        this.bh = (document.querySelector('.intro')! as HTMLElement).offsetHeight * .6;
+        (this as any).bh = (document.querySelector('.intro')! as HTMLElement).offsetHeight * .6;
         // 稀疏
         document.addEventListener('scroll', () => {
             tk && cancelAnimationFrame(tk);
             tk = requestAnimationFrame(() => {
-                this.scroll = window.scrollY;
+                (this as any).scroll = window.scrollY;
             });
         });
     },

@@ -26,7 +26,7 @@ export default {
         };
     },
     created () {
-        this.lists = icons;
+        (this as any).lists = icons;
     },
     methods: {
         copyIconCode(name: string) {
@@ -39,14 +39,14 @@ export default {
                 copy.select();
                 document.execCommand('copy');
                 document.body.removeChild(copy);
-                this.$msg({ text: code + ' is copy!', type: 'success' });
+                (this as any).$msg({ text: code + ' is copy!', type: 'success' });
             }
         },
     },
     watch: {
         keyword: {
             handler(val: any, old: any) {
-                this.lists = icons.filter((item) => item.indexOf(val) !== -1);
+                (this as any).lists = icons.filter((item) => item.indexOf(val) !== -1);
             },
         },
     },
