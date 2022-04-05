@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, inject, watch, reactive, computed, defineComponent } from "vue";
-import Logo from "./logo/index.vue";
+import Logo from "@/components/logo/index.vue";
 
 const scroll = inject("scroll");
 const bh = inject("bh");
@@ -43,8 +43,8 @@ watch(scroll, (val: number, old) => {
       <logo />
       <h3 ref="sign">云课程</h3>
     </a>
-    <input type="radio" value="dark" name="theme" id="dark" @change="setTheme" />
-    <input type="radio" value="light" name="theme" id="light" @change="setTheme" />
+    <input type="radio" value="dark" name="theme" id="dark" @change="setTheme" class="implicit" />
+    <input type="radio" value="light" name="theme" id="light" @change="setTheme" class="implicit" />
     <div class="radio-set" ref="sets">
       <label for="dark" aria-label="Dark theme">
         <icon name="night" />
@@ -90,12 +90,6 @@ header {
     svg {
       margin-right: 1rem;
     }
-  }
-  input {
-    height: 1px;
-    opacity: 0;
-    position: absolute;
-    width: 1px;
   }
   .radio-set {
     display: inline-flex;

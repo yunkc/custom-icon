@@ -1,0 +1,17 @@
+<svg width="24" height="24" viewBox="0 0 24
+    24"
+    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" stroke-linecap="round" stroke-linejoin="round">
+    <g>
+        <defs>
+            <mask id="mask1" x="0" y="-2" width="22" height="22">
+                <rect x="0" y="0" width="22" height="14" fill="#fff" stroke="none"></rect>
+            </mask>
+        </defs>
+        <g fill="none" fill-rule="evenodd">
+            <g mask="url(#mask1)">
+                <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M8.65280303,8.35181818 L8.65280303,7.32854545 C8.65280303,5.50168794 10.1513942,4.02072734 12,4.02072734 C13.8486058,4.02072734 15.347197,5.50168794 15.347197,7.32854545 L15.347197,17"></path>
+            </g>
+            <rect fill="currentColor" x="5" y="12" width="14" height="10" rx="1.5"></rect>
+        </g>
+    </g>
+</svg>
